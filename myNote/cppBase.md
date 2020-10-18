@@ -31,7 +31,7 @@ Sbrk（）的参数为申请内存的大小，返回heap新的上界brk的地址
 
 ```c++
 #include <sys/mman.h>
-void *mmap(void *addr, size\_t length, int prot, int flags, int fd, off\_t offset);
+void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset);
 int munmap(void *addr, size_t length);
 mmap的第一种用法是映射此盘文件到内存中；第二种用法是匿名映射，不映射磁盘文件，而向映射区申请一块内存。
 malloc使用的是mmap的第二种用法（匿名映射）。
