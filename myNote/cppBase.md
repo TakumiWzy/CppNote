@@ -169,7 +169,7 @@ char转int ，有符号转换时高位为1补0xffffff三字节。高位0补0x000
 
 13.const和#define区别？编译阶段，安全性，内存占用情况？
 
-const 有类型检查，更为安全。#define仅仅预编译阶段为文本替换，无法进行调试，编译期无类型检查。可用于实现静态多态。占用空间：#define PI 3.14 预处理，占用代码段空间，const float PI=3.14本质上还是一个 float占用数据段空间。
+const 有类型检查，更为安全。#define仅仅预编译阶段为文本替换，无法进行调试，编译期无类型检查。可用于实现静态多态(如 #define Max(A,B) A>B?A:B )。占用空间：#define PI 3.14 预处理，占用代码段空间，const float PI=3.14本质上还是一个 float占用数据段空间。
 
 const不能重定义，#define可以通过#undef取消定义再重新定义。
 
@@ -179,7 +179,7 @@ const不能重定义，#define可以通过#undef取消定义再重新定义。
 
 14.虚继承：
 
-解决多继承中菱形继承时命名冲突，编译器不知道继承自哪个基类从而报错问题。C++提出虚继承，使得派生类中只保留一份间接基类的成员。参考：http://c.biancheng.net/view/2280.html
+解决多继承中菱形继承时命名冲突，编译器不知道继承自哪个基类从而产生编译报错问题。C++提出虚继承，使得派生类中只保留一份间接基类的成员。参考：http://c.biancheng.net/view/2280.html
 
 <img src="http://c.biancheng.net/uploads/allimg/200629/1-2006291J3551E.png" alt="菱形继承和虚继承" style="zoom:67%;" />
 
